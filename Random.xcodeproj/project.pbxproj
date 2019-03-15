@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A17C5C2D223B6C4C003EF29D /* DogImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17C5C2C223B6C4C003EF29D /* DogImage.swift */; };
+		A17C5C2F223C2EA0003EF29D /* DogList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17C5C2E223C2EA0003EF29D /* DogList.swift */; };
 		A1A45400223AD76700BE8EB9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A453FF223AD76700BE8EB9 /* AppDelegate.swift */; };
 		A1A45402223AD76700BE8EB9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A45401223AD76700BE8EB9 /* ViewController.swift */; };
 		A1A45405223AD76700BE8EB9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1A45403223AD76700BE8EB9 /* Main.storyboard */; };
@@ -18,6 +19,7 @@
 
 /* Begin PBXFileReference section */
 		A17C5C2C223B6C4C003EF29D /* DogImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogImage.swift; sourceTree = "<group>"; };
+		A17C5C2E223C2EA0003EF29D /* DogList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogList.swift; sourceTree = "<group>"; };
 		A1A453FC223AD76700BE8EB9 /* Random.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Random.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1A453FF223AD76700BE8EB9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A1A45401223AD76700BE8EB9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -90,6 +92,7 @@
 			children = (
 				A1A45414223AD87400BE8EB9 /* DogAPI.swift */,
 				A17C5C2C223B6C4C003EF29D /* DogImage.swift */,
+				A17C5C2E223C2EA0003EF29D /* DogList.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -165,6 +168,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A17C5C2F223C2EA0003EF29D /* DogList.swift in Sources */,
 				A1A45402223AD76700BE8EB9 /* ViewController.swift in Sources */,
 				A1A45400223AD76700BE8EB9 /* AppDelegate.swift in Sources */,
 				A17C5C2D223B6C4C003EF29D /* DogImage.swift in Sources */,

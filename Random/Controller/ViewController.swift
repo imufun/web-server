@@ -14,7 +14,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var loader: UIActivityIndicatorView!
     @IBOutlet weak var pickerView: UIPickerView!
     
-    var breeds : [String] = ["A", "B"]
+    var breeds : [String] = [ ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +23,9 @@ class ViewController: UIViewController {
         pickerView.delegate = self
         
         self.loader.isHidden = false 
+        
+        
+        DogAPI.listALlBreeds(completionHandler: handleBreedsListResponse(breeds:error:))
         
         
     }
@@ -42,6 +45,16 @@ class ViewController: UIViewController {
             self.imageView.image = image
         }
     }
+    
+    func handleBreedsListResponse (breeds: [String], error : Error?) {
+        self.breeds =  breeds
+        DispatchQueue.main.async {
+            self.pickerView.reloadAllComponents()
+        }
+        
+    }
+    
+    
 }
 
 extension ViewController: UIPickerViewDelegate, UIPickerViewDataSource {
@@ -58,7 +71,7 @@ extension ViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        DogAPI.requestRandomImage (completionHandler:  handleRequest(imageData:error:))
+        DogAPI.requestRandomImage (breeds: breeds[row],completionHandler:  handleRequest(imageData:error:))
     }
     
     
