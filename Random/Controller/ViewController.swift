@@ -17,34 +17,26 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        self.loader.isHidden = false
-        var radomImageEndpoint = DogAPI.Endpoint.randomCollectionDogsCollections.url
-        
-        let task = URLSession.shared.dataTask(with: radomImageEndpoint) { (data, response, error) in
-            
-            self.loader.isHidden = true
-            guard let data = data else {
-                return
-            }
-            
-            let decoder = JSONDecoder()
-            let imageData = try! decoder.decode(DogImage.self, from: data)
-            
-            guard let imageURL = URL(string: imageData.message) else {
-                return
-            }
-            DogAPI.requestImageFile(url: imageURL, complitionHandler: { (image, error) in
-                
-                DispatchQueue.main.async {
-                    self.imageView.image = image
-                }
-            })
-            print(data)
-        }
-        task.resume()
+        self.loader.isHidden = false 
+        DogAPI.requestRandomImage (completionHandler:  handleRequest(imageData:error:))
         
     }
     
+    
+    func handleRequest(imageData: DogImage? , error: Error?){
+        guard let imageURL = URL(string: imageData!.message) else {
+            return
+        }
+        DogAPI.requestImageFile(url: imageURL, complitionHandler: self.handleRequest(image:error:))
+        
+    }
+    
+    
+    func handleRequest(image: UIImage?, error: Error?)  {
+        DispatchQueue.main.async {
+            self.imageView.image = image
+        }
+    }
     
 }
 

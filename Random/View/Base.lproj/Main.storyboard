@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cEA-xW-cpZ">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Download Image-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Random" customModuleProvider="target" sceneMemberID="viewController">
@@ -19,10 +19,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7dO-oq-0Gs">
-                                <rect key="frame" x="16" y="40" width="343" height="100"/>
+                                <rect key="frame" x="16" y="84" width="343" height="250"/>
                             </imageView>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="aEL-kB-D6f">
-                                <rect key="frame" x="177.5" y="80" width="20" height="20"/>
+                                <rect key="frame" x="177.5" y="199" width="20" height="20"/>
                                 <color key="color" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </activityIndicatorView>
                         </subviews>
@@ -31,13 +31,14 @@
                             <constraint firstItem="7dO-oq-0Gs" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="UTt-aX-KK0"/>
                             <constraint firstItem="7dO-oq-0Gs" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="VK1-JK-rTW"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="7dO-oq-0Gs" secondAttribute="trailing" constant="16" id="WIA-OE-wed"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="7dO-oq-0Gs" secondAttribute="bottom" constant="527" id="i4n-El-9Uo"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="7dO-oq-0Gs" secondAttribute="bottom" constant="333" id="i4n-El-9Uo"/>
                             <constraint firstItem="aEL-kB-D6f" firstAttribute="centerX" secondItem="7dO-oq-0Gs" secondAttribute="centerX" id="iXy-vZ-OnM"/>
                             <constraint firstItem="7dO-oq-0Gs" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="kMq-Nb-uQD"/>
                             <constraint firstItem="aEL-kB-D6f" firstAttribute="centerY" secondItem="7dO-oq-0Gs" secondAttribute="centerY" id="xsL-8J-MnM"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Download Image" id="Yh3-A4-OZs"/>
                     <connections>
                         <outlet property="imageView" destination="7dO-oq-0Gs" id="zP7-tO-mRW"/>
                         <outlet property="loader" destination="aEL-kB-D6f" id="Ofx-d3-7Xt"/>
@@ -45,7 +46,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="133.59999999999999" y="133.5832083958021"/>
+            <point key="canvasLocation" x="1095" y="134"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="1va-Gk-EbF">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cEA-xW-cpZ" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="aXo-G7-Fr8">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="JuK-p3-kVn"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zs2-AE-1SQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="302" y="134"/>
         </scene>
     </scenes>
 </document>
